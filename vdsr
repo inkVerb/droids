@@ -1,0 +1,21 @@
+#!/bin/bash
+#inkVerbDroid! verb.ink
+
+# This finds and replaces recursively via grep.
+
+# How to use:
+## vdsr [find] [replace]
+
+# Eg:
+## vdsr foo bar
+
+
+FFOO=$1
+RBAR=$2
+
+# Do it
+grep -rl '${FFOO}' * -R | xargs sed -i 's/${FFOO}/${RBAR}/g'
+
+# Finish
+echo "Done. \"${FFOO}\" replaced with \"${RBAR}\" recursively."
+
